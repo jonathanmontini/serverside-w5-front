@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "NODE_ENV=test jest --config jest.config.js --coverage",
+    "test:unit": "NODE_ENV=test jest --config jest.config.js",
     "test:unit:watch": "NODE_ENV=test jest --watch",
     "test:e2e": "npm run test:e2e:desktop && npm run test:e2e:mobile",
     "test:e2e:desktop": "NODE_TEST=e2e wdio wdio.desktop.conf.js",

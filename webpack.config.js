@@ -17,7 +17,7 @@ const path = require('path');
 const entrypoints = {
   demo: './app/client/demo.js',
   demoWithPage: './app/client/demoWithPage.js',
-}
+};
 
 const generateLegacyBundles = entryPoints => Object.keys(entryPoints).reduce((accumulator, entrypointName) => {
   const filePath = entryPoints[entrypointName];
@@ -43,7 +43,7 @@ const legacyEntryPointsCount = Object.keys(entryPointsFamilies.polyfilled).lengt
 
 const config = createConfig([
   entryPoint({
-    ...entryPointsFamilies.polyfilled, 
+    ...entryPointsFamilies.polyfilled,
     ...entryPointsFamilies.nonPolyfilled,
     ...entryPointsFamilies.nonJsAssets
   }),
@@ -69,7 +69,7 @@ const config = createConfig([
             name: 'vendor.legacy',
             chunks: chunk => !!entryPointsFamilies.polyfilled[chunk.name],
             /**
-             * The following line moves modules to the vendor.legacy when they´re repeated in 80% 
+             * The following line moves modules to the vendor.legacy when they´re repeated in 80%
              * of your entrypoints. Feel free to modify this heuristic to your needs
              */
             minChunks: legacyEntryPointsCount * 0.8,

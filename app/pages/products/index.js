@@ -1,3 +1,5 @@
+const router = require('nordic/ragnar').router();
+const { render, fetchProducts } = require('./controller');
 /**
  * Ejercitación Integradora:
  * 
@@ -14,3 +16,6 @@
  * API de MeLi en /services/productsService.js
  *****************************************************************************
  */
+router.get('/', fetchProducts, render);
+
+module.exports = router;
